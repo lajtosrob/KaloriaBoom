@@ -17,7 +17,7 @@
 
                             <div class='card bg-secondary mb-3'>
                                 <div class='card-header'>
-                                    <h5>Select food to add to the Food Log</h5>
+                                    <h5>Válassza ki az ételt, amelyet hozzáadni szeretne az Ételnaplóhoz</h5>
                                 </div>
                                 <div class='card-body'>
 
@@ -37,7 +37,7 @@
                                                     </div>
                                                     <div class='col-4'>
                                                         <button type='submit' class='btn btn-primary'>
-                                                            Add Food
+                                                            Étel hozzáadása
                                                         </button>
                                                     </div>
                                                 </div>
@@ -51,19 +51,20 @@
                             <div class='card bg-secondary mb-3'>
 
                                 <div class='card-header'>
-                                    <h5>Food consumed today</h5>
-                                    <h5><strong class='text-primary'>{% now 'D, jS F Y' %}</strong></h5>
+                                    <h5>Ma elfogyasztott élelmiszerek</h5>
+                                    {% comment %} <h5><strong class='text-primary'>{% now 'D, jS F Y' %}</strong></h5> {% endcomment %}
+                                    <h5><strong class='text-primary'>{% now "Y. F. j, l" %}</strong></h5>
                                 </div>
                                 <div class='card-body'>
 
                                     <table id='foodtable' class='table table-hover'>
                                         <thead>
                                             <tr>
-                                                <th scope='col' class='col-md-2'>Food Item</th>
-                                                <th scope='col' class='col-md-2'>Calories</th>
-                                                <th scope='col' class='col-md-2'>Fat (g) in 100g</th>
-                                                <th scope='col' class='col-md-2'>Carbs (g) in 100g</th>
-                                                <th scope='col' class='col-md-2'>Protein (g) in 100g</th>
+                                                <th scope='col' class='col-md-2'>Étel neve</th>
+                                                <th scope='col' class='col-md-2'>Kalória</th>
+                                                <th scope='col' class='col-md-2'>Zsír 100g-ban</th>
+                                                <th scope='col' class='col-md-2'>Szénhidrát 100g-ban</th>
+                                                <th scope='col' class='col-md-2'>Fehérje 100g-ban</th>
                                                 <th scope='col' class='col-md-2'></th>
                                             </tr>
                                         </thead>
@@ -83,7 +84,7 @@
                                             </tr>
                                         {% endfor %}
                                             <tr>
-                                                <td id='foodName' class='col-md-2'><b>Total</b></td>
+                                                <td id='foodName' class='col-md-2'><b>Összesen</b></td>
                                                 <td id='totalCalories' class='col-md-2'><b></b></td>
                                                 <td id='totalFat' class='col-md-2'><b></b></td>
                                                 <td id='totalCarbohydrates' class='col-md-2'><b></b></td>
@@ -102,7 +103,7 @@
 
                             <div class='card bg-secondary mb-3'>
                                 <div class='card-header'>
-                                    <h5>Daily Calorie Goal - <strong class='text-primary'>2,000 calories</strong></h5>
+                                    <h5>Napi kalóriacél - <strong class='text-primary'>2,000 kalória</strong></h5>
                                 </div>
                                 <div class='card-body justify-content-center'>
 
@@ -123,7 +124,7 @@
 
                             <div class='card bg-secondary mb-3'>
                                 <div class='card-header'>
-                                    <h5>Macronutrients Breakdown</h5>
+                                    <h5>A makrotápanyagok lebontása</h5>
                                 </div>
                                 <div class='card-body justify-content-center'>
                                     <div class='chart-pie pt-4'>
