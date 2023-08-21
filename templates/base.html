@@ -25,7 +25,7 @@
         <nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
             <div class='container-fluid'>
                 <a class='navbar-brand' href="{% url 'index' %}">
-                    <i class='fas fa-pepper-hot fa-2xl'></i> Food Tracker
+                    <i class='fas fa-pepper-hot fa-2xl'></i> Kalória-Boom
                 </a>
                 <button class='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarColor' aria-controls='navbarColor' aria-expanded='false' aria-label='Toggle navigation'>
                     <span class='navbar-toggler-icon'></span>
@@ -35,13 +35,13 @@
                     <ul class='navbar-nav me-auto'>
                         <li class='nav-item'>
                             <a class='nav-link' href="{% url 'index' %}">
-                                <i class='fas fa-list'></i> Food List
+                                <i class='fas fa-list'></i> Étel lista
                             </a>
                         </li>
 
                         <li class='nav-item dropdown'>
                             <a class='nav-link dropdown-toggle' data-bs-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='false'>
-                                <i class='fas fa-pizza-slice'></i> Food Categories
+                                <i class='fas fa-pizza-slice'></i> Étel kategóriák
                             </a>
                             <div class='dropdown-menu'>
                                 {% for category in categories %}
@@ -57,12 +57,12 @@
                         {% if user.is_authenticated %}
                             <li class='nav-item'>
                                 <a class='nav-link' href="{% url 'food_add' %}">
-                                    <i class='far fa-plus-square'></i> Add Food Item
+                                    <i class='far fa-plus-square'></i> Új étel felvitele
                                 </a>
                             </li>
                             <li class='nav-item'>
                                 <a class='nav-link' href="{% url 'food_log' %}">
-                                    <i class='fas fa-utensils'></i> Food Log
+                                    <i class='fas fa-utensils'></i> Étkezési napló
                                 </a>
                             </li>
                         {% endif %}
@@ -76,23 +76,23 @@
                             </a>
                             <div class='dropdown-menu dropdown-menu-end'>
                                 <a class='dropdown-item' href="{% url 'weight_log' %}">
-                                    <i class='fas fa-user'></i> User Profile
+                                    <i class='fas fa-user'></i> Felhasználói profil
                                 </a>
                                 <div class='dropdown-divider'></div>
                                 <a class='dropdown-item' href="{% url 'logout' %}">
-                                    <i class='fas fa-sign-out-alt'></i> Log Out
+                                    <i class='fas fa-sign-out-alt'></i> Kijelentkezés
                                 </a>
                             </div>
                         </li>
                         {% else %}
                         <li class='nav-item'>
                             <a class='nav-link' href="{% url 'login' %}">
-                                <i class='fas fa-sign-in-alt'></i> Log In
+                                <i class='fas fa-sign-in-alt'></i> Bejelentkezés
                             </a>
                         </li>
                         <li class='nav-item'>
                             <a class='nav-link' href="{% url 'register' %}">
-                                <i class='fas fa-user-plus'></i> Register
+                                <i class='fas fa-user-plus'></i> Regisztráció
                             </a>
                         </li>
                         {% endif %}
@@ -111,7 +111,7 @@
         <footer class='py-4'>
             <div class='d-flex align-items-center justify-content-center'>
                 <div class='text-center'>
-                    Copyright &copy; <script>document.write(new Date().getFullYear())</script> Bob's Programming Academy.
+                    Copyright &copy; <script>document.write(new Date().getFullYear())</script> Fülöpné Kiss Anikó, Lajtos Róbert
                 </div>
             </div>
         </footer>
