@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block title %}Food Tracker | Food Log{% endblock %}
+{% block title %}Kalória-Boom | Étkezési napló{% endblock %}
 
 {% block body %}
 <div class='py-4 mt-auto'>
@@ -16,31 +16,31 @@
 
                             <div class='card bg-secondary mb-3'>
                                 <div class='card-header'>
-                                    <h4>Hi, <strong>{{ user.username }}</strong>!</h4>
+                                    <h4>Szia, <strong>{{ user.username }}</strong>!</h4>
                                 </div>
                                 <div class='card-body'>
 
                                     <div class='d-flex w-100 justify-content-between'>
                                         <p class='mb-1'>
-                                            Username: <strong>{{ user.username }}</strong>
+                                            Felhasználónév: <strong>{{ user.username }}</strong>
                                         </p>
                                     </div>
 
                                     <div class='d-flex w-100 justify-content-between'>
                                         <p class='mb-1'>
-                                            Email: <strong>{{ user.email }}</strong>
+                                            E-mail cím: <strong>{{ user.email }}</strong>
                                         </p>
                                     </div>
 
                                     <div class='d-flex w-100 justify-content-between'>
                                         <p class='mb-1'>
-                                            Date joined: <strong>{{ user.date_joined }}</strong>
+                                            Regisztráció dátuma: <strong>{{ user.date_joined }}</strong>
                                         </p>
                                     </div>
 
                                     <div class='d-flex w-100 justify-content-between'>
                                         <p class='mb-1'>
-                                            Last login: <strong>{{ user.last_login }}</strong>
+                                            Utojára belépve: <strong>{{ user.last_login }}</strong>
                                         </p>
                                     </div>
 
@@ -50,7 +50,7 @@
                             <div class='card bg-secondary mb-3'>
 
                                 <div class='card-header'>
-                                    <h4>Record Your Weight</h4>
+                                    <h4>Jegyezze fel a súlyát!</h4>
                                 </div>
                                 <div class='card-body'>
 
@@ -62,7 +62,7 @@
                                                 <div class='row'>
                                                     <div class='col-5'>
                                                         <label for='date_weight' class='form-label mt-2'>
-                                                            Date
+                                                            Dátum
                                                         </label>
                                                         <input
                                                             class='form-control'
@@ -73,7 +73,7 @@
                                                     </div>
                                                     <div class='col-5'>
                                                         <label for='weight' class='form-label mt-2'>
-                                                            Weight in kg
+                                                            Súly kg-ban
                                                         </label>
                                                         <input 
                                                             class='form-control'
@@ -90,7 +90,7 @@
                                                     </div>
                                                     <div class='col-2'>
                                                         <button type='submit' class='btn btn-primary' style='margin-top:40px;'>
-                                                            Add
+                                                            Hozzáadom
                                                         </button>
                                                     </div>
                                                 </div>
@@ -104,15 +104,15 @@
 
                             <div class='card bg-secondary mb-3'>
                                 <div class='card-header'>
-                                    <h4>Weight Log</h4>
+                                    <h4>Testsúly napló</h4>
                                 </div>
                                 <div class='card-body'>
 
                                     <table id='weightable' class='table'>
                                         <thead>
                                             <tr>
-                                                <th scope='col' class='col-md-4'>Weight in kg</th>
-                                                <th scope='col' class='col-md-4'>Date</th>
+                                                <th scope='col' class='col-md-4'>Súly kg-ban</th>
+                                                <th scope='col' class='col-md-4'>Rögzítés dátuma</th>
                                                 <th scope='col' class='col-md-4'></th>
                                             </tr>
                                         </thead>
@@ -142,7 +142,7 @@
                         <div class='col-md-6 mt-4'>
                             <div class='card bg-secondary mb-3'>
                                 <div class='card-header'>
-                                    <h4>Weight History</h4>
+                                    <h4>Testsúly történet</h4>
                                 </div>
                                 <div class='card-body justify-content-center'>
                                     <div class='chart-bar'>

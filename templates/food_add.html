@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Food Tracker | Add Food Item{% endblock %}
+{% block title %}Kalória-Boom | Új étel felvitele{% endblock %}
 
 {% block body %}
 <div class='py-4 mt-auto'>
@@ -10,14 +10,14 @@
             <br>
             <div class='alert alert-dismissible alert-success' role='alert'>
                 <button type='button' class='btn-close' data-bs-dismiss='alert'></button>
-                The new food item added successfully.
+                Az új étel hozzáadása sikeresen megtörtént.
             </div>
         {% else %}
             <div class='d-flex justify-content-center'>
-                <h3>Add Food Item</h3>
+                <h3>Új étel felvitele</h3>
             </div>
             <div class='d-flex justify-content-center'>
-                <p>Enter the details of a new food item</p>
+                <p>Add meg az étel adatait!</p>
             </div>
             
                 <div class='row'>
@@ -35,8 +35,8 @@
                                             {% for form in image_form %}
                                                 {{ form.as_p }}
                                             {% endfor %}
-                                            <button type='submit' class='btn btn-primary'>Save</button>
-                                            <a href="{% url 'index' %}" class='btn btn-outline-dark'>Cancel</a>
+                                            <button type='submit' class='btn btn-primary'>Mentés</button>
+                                            <a href="{% url 'index' %}" class='btn btn-outline-dark'>Mégsem</a>
                                         </div>
                                     </form>
                                 </div>

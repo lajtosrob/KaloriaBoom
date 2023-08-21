@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %}Food Tracker | Food Log{% endblock %}
+{% block title %}Kalória-Boom | Étkezési napló{% endblock %}
 
 {% block body %}
 <div class='py-4 mt-auto'>
     <div class='container-fluid px-4'>
 
-        <h3>Food Log</h3>
+        <h3>Étkezési napló</h3>
 
             <div class='row justify-content-center'>
                 <div class='col-xl-12'>
@@ -17,8 +17,8 @@
                                 <form method='POST'>
                                     {% csrf_token %}
 
-                                    Are you sure you want to delete this food item?
-                                    <button type='submit' class='btn btn-primary'>Delete</button>
+                                    Biztos, hogy törlöd ezt az ételt?
+                                    <button type='submit' class='btn btn-primary'>Törlés</button>
 
                                 </form>
 

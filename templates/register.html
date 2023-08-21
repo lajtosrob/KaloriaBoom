@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}Food Tracker | Registration{% endblock %}
+{% block title %}Kalória-Boom | Regisztráció{% endblock %}
 
 {% block body %}
 <div class='py-4 mt-auto'>
     <div class='container px-4'>
 
         <div class='d-flex justify-content-center'>
-            <h3>Register</h3>
+            <h3>Regisztráció</h3>
         </div>
 
         {% if message %}
@@ -25,43 +25,43 @@
                                 {% csrf_token %}
                                 <div class='form-group'>
                                     <label for='inputUsername' class='form-label mt-4'>
-                                        Username
+                                        Felhasználónév
                                     </label>
                                     <input type='text' name='username' class='form-control' id='inputUsername' placeholder='Enter username' autofocus>
                                 </div>
 
                                 <div class='form-group'>
                                     <label for='inputEmail' class='form-label mt-4'>
-                                        Email Address
+                                        E-mail cím
                                     </label>
                                     <input type='email' name='email' class='form-control' id='inputEmail' placeholder='Enter email'>
                                 </div>
 
                                 <div class='form-group'>
                                     <label for='inputPassword1' class='form-label mt-4'>
-                                        Password
+                                        Jelszó
                                     </label>
                                     <input type='password' name='password' class='form-control' id='inputPassword1' placeholder='Enter password'>
                                 </div>
 
                                 <div class='form-group'>
                                     <label for='inputPassword2' class='form-label mt-4'>
-                                        Confirm Password
+                                        Jelszó megerősítése
                                     </label>
                                     <input type='password' name='confirmation' class='form-control' id='inputPassword2' placeholder='Confirm password'>
                                 </div>
 
                                 <div class='form-group mt-4'>
                                     <button type='submit' class='btn btn-primary'>
-                                        Register
+                                        Regisztrálok
                                     </button>
                                 </div>
 
                             </form>
 
                             <div class='mt-2'>
-                                Already have an account? <a href="{% url 'login' %}" type='button' class='btn btn-link'>
-                                    Log In here
+                                Van már felhasználói fiókja? <a href="{% url 'login' %}" type='button' class='btn btn-link'>
+                                    Jelentkezzen be itt!
                                 </a>
                             </div>
 

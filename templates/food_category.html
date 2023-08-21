@@ -6,7 +6,7 @@
 <div class='py-4 mt-auto'>
     <div class='container px-4'>
 
-        <h3>Category: {{ title }}</h3>
+        <h3>Kategória: {{ title }}</h3>
 
         <div class='row justify-content-center'>
 
@@ -41,14 +41,14 @@
                             <p class='card-text'>
                                 <div class='my-3'>
                                     <!-- Food calories -->
-                                    <strong>{{ food.calories}} calories</strong> in {{ food.quantity|floatformat:0 }} grams
+                                    <strong>{{ food.calories}} Kalória</strong> {{ food.quantity|floatformat:0 }} grammban
                                 </div>
                             </p>
 
                             <p class='card-text'>
                                 <div class='my-3'>
                                     <a href="{% url 'food_details' food.id %}" type='button' class='btn btn-link'>
-                                        View details
+                                        Részletek megtekintése
                                     </a>
                                 </div>
                             </p>
@@ -98,7 +98,7 @@
         {% else %}
             <br>
             <div class='alert alert-info' role='alert'>
-                No foods in this category.
+                Nincs étel ebben a kategóriában.
             </div>
         {% endif %}
 

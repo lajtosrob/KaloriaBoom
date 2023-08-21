@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Food Tracker | {{ title }}{% endblock %}
+{% block title %}Kalória-Boom | {{ title }}{% endblock %}
 
 {% block body %}
 <div class='py-4 mt-auto'>
@@ -32,21 +32,21 @@
                         <p class='card-text'>
                             <div class='my-3'>
                                 <!-- Food category -->
-                                Category: {{ food.category }}
+                                Kategória: {{ food.category }}
                             </div>
                         </p>
 
                         <p class='card-text'>
                             <div class='my-3'>
                                 <!-- Food calories -->
-                                <strong>{{ food.calories}} calories</strong> in {{ food.quantity|floatformat:0 }} grams
+                                <strong>{{ food.calories}} kalória</strong> {{ food.quantity|floatformat:0 }} grammban
                             </div>
                         </p>
 
                         <p class='card-text'>
                             <div class='my-3'>
                                 <a href="{% url 'food_details' food.id %}" type='button' class='btn btn-link'>
-                                    View details
+                                    Részletek megtekintése
                                 </a>
                             </div>
                         </p>
