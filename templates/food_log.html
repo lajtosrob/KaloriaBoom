@@ -2,8 +2,7 @@
 
 {% load static %}
 
-{% block title %}Kalória-Boom | 
-{% endblock %}
+{% block title %}Kalória-Boom | {% endblock %}
 
 {% block body %}
 <div class='py-4 mt-auto'>
@@ -15,6 +14,37 @@
                     <div class='row'>
                         <div class='col-md-6 mt-4'>
 
+                            <div class='card bg-secondary mb-3'>
+                                <div class='card-header'>
+                                    <h5>Válassza ki a dátumot!</h5>
+
+                                </div>
+                                <div class='card-body'>
+
+                                    <div class='form-group'>
+                                        <form method='POST'>
+                                            {% csrf_token %}
+                                            <div class='form-group'>
+                                                <div class='row'>
+                                                    <div class='col-8'>
+                                                        <select class='form-select' name='food_consumed' id='food_consumed'>
+                                                            {% for food in foods %}
+                                                                <option value='{{food.food_name}}'>
+                                                                    {{ food.food_name }}
+                                                                </option>
+                                                            {% endfor %}
+                                                        </select>
+                                                    </div>
+                                                    <div class='col-4'>
+                                                        <button type='submit' class='btn btn-primary'>
+                                                            Étel hozzáadása
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
                             <div class='card bg-secondary mb-3'>
                                 <div class='card-header'>
                                     <h5>Válassza ki az ételt, amelyet hozzáadni szeretne az Ételnaplóhoz</h5>
@@ -70,18 +100,23 @@
                                         </thead>
                                         <tbody>
                                         {% for food_item in user_food_log %}
-                                            <tr>
-                                                <td class='col-md-2'>{{ food_item.food_consumed.food_name }}</td>
-                                                <td class='col-md-2'>{{ food_item.food_consumed.calories }}</td>
-                                                <td class='col-md-2'>{{ food_item.food_consumed.fat }}</td>
-                                                <td class='col-md-2'>{{ food_item.food_consumed.carbohydrates }}</td>
-                                                <td class='col-md-2'>{{ food_item.food_consumed.protein }}</td>   
-                                                <td>
-                                                    <a class='btn btn-danger' href="{% url 'food_log_delete' food_item.id %}">
-                                                        <i class='fas fa-trash-alt'></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                            {% if food_item.food_consumed.food_date == now %}
+
+                                                <tr>
+                                                    <td class='col-md-2'>{{ food_item.food_consumed.food_name }}</td>
+                                                    <td class='col-md-2'>{{ food_item.food_consumed.calories }}</td>
+                                                    <td class='col-md-2'>{{ food_item.food_consumed.fat }}</td>
+                                                    <td class='col-md-2'>{{ food_item.food_consumed.carbohydrates }}</td>
+                                                    <td class='col-md-2'>{{ food_item.food_consumed.protein }}</td>   
+                                                    <td>
+                                                        <a class='btn btn-danger' href="{% url 'food_log_delete' food_item.id %}">
+                                                            <i class='fas fa-trash-alt'></i>
+                                                        </a>
+                                                    </td>
+                                                </tr>                                           
+                                            
+                                            {% endif %}
+
                                         {% endfor %}
                                             <tr>
                                                 <td id='foodName' class='col-md-2'><b>Összesen</b></td>

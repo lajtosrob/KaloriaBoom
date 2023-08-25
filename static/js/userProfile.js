@@ -3,6 +3,21 @@ var table  = document.getElementById('weightable');
 var recorded_weight = [];
 var recorded_date = [];
 
+var tableMinRow = [table.rows[0].cells[0], table.rows[0].cells[1]];
+var tableMinIndex = 0;
+
+/* for(var index = 0; index < table.rows.length; index++) {
+    for(var index2 = index; index2 < table.rows.length; index2++) {
+        if(table.rows[index2].cells[1] < tableMinRow[1]) {
+            tableMinRow = table.rows[index2];
+            tableMinIndex = index2;
+        }
+        table.rows[tableMinIndex] = table.rows[index];
+        table.rows[index] = tableMinRow;
+        tableMinRow = table.rows[index+1];
+    }
+} */
+
 for(var i = 1; i < table.rows.length; i++) {
     recorded_weight.push([
         parseFloat(table.rows[i].cells[0].innerHTML)
@@ -12,6 +27,7 @@ for(var i = 1; i < table.rows.length; i++) {
         table.rows[i].cells[1].innerHTML
     ]); 
 }
+
 
 var values = recorded_weight.flat();
 
@@ -27,7 +43,7 @@ var myChart = new Chart(ctx, {
     data: {
         labels: [...recorded_date],
         datasets: [{
-            label: 'Weight',
+            label: 'Testsúly',
             data: values,
             lineTension: 0.3,
             backgroundColor: 'rgba(2,117,216,0.2)',
@@ -58,7 +74,7 @@ var myChart = new Chart(ctx, {
                     fontColor: '#555759',
                     fontSize: 16,
                     fontStyle: 700,
-                    labelString: 'Date'
+                    labelString: 'Dátum'
                 },
             }],
             yAxes: [{
@@ -81,7 +97,7 @@ var myChart = new Chart(ctx, {
                     fontColor: '#555759',
                     fontSize: 16,
                     fontStyle: 700,
-                    labelString: 'Weight in kg'
+                    labelString: 'Testsúly kb-ban'
                 },
             }],
         },

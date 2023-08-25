@@ -22,7 +22,7 @@ var ctx = document.getElementById('myBarChart');
 var myBarChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: {
-        labels: ['Fat', 'Carbs', 'Protein'],
+        labels: ['Zsír', 'Szénhidrát', 'Fehérje'],
         datasets:
         [
             {

@@ -6,6 +6,7 @@ from django.db import IntegrityError
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from datetime import datetime
 
 from .models import User, Food, FoodCategory, FoodLog, Image, Weight
 from .forms import FoodForm, ImageForm
@@ -177,12 +178,13 @@ def food_log_view(request):
         # get the food item selected by the user
         food = request.POST['food_consumed']
         food_consumed = Food.objects.get(food_name=food)
+        food_date = datetime.now()
 
         # get the currently logged in user
         user = request.user
 
         # add selected food to the food log
-        food_log = FoodLog(user=user, food_consumed=food_consumed)
+        food_log = FoodLog(user=user, food_consumed=food_consumed, food_date=food_date)
         food_log.save()
 
     else:  # GET method
@@ -232,6 +234,9 @@ def weight_log_view(request):
         # add the data to the weight log
         weight_log = Weight(user=user, weight=weight, entry_date=entry_date)
         weight_log.save()
+
+        
+    Weight.objects.all().order_by('entry_date').values()
 
     # get the weight log of the logged in user
     user_weight_log = Weight.objects.filter(user=request.user)

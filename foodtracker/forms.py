@@ -1,6 +1,6 @@
 from django import forms
 
-from .models import Food, Image
+from .models import Food, Image, FoodLog
 
 
 class FoodForm(forms.ModelForm):
@@ -44,3 +44,15 @@ class ImageForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(ImageForm, self).__init__(*args, **kwargs)
         self.visible_fields()[0].field.widget.attrs['class'] = 'form-control'
+
+""" class FoodLog(forms.ModelForm):
+
+    class Meta: 
+        model = FoodLog
+        fields = ['user', 'food_comsumed']
+
+        labels = {
+            'user' : 'Felhasználó',
+            'food_comsumed' : 'Elfogyasztott étel'
+        }
+ """

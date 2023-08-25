@@ -40,9 +40,9 @@ var myPieChart = new Chart(ctx, {
     type: 'doughnut',
     data: {
         labels: [
-            'Fat ' + fatPercentage + '%', 
-            'Carbs ' +  carbohydratesPercentage + '%', 
-            'Protein ' + proteinPercentage + '%'
+            'Zsír ' + fatPercentage + '%', 
+            'Szénhidrát ' +  carbohydratesPercentage + '%', 
+            'Fehérje ' + proteinPercentage + '%'
         ],
         datasets: 
         [
@@ -65,7 +65,7 @@ var myPieChart = new Chart(ctx, {
             },
             title: {
                 display: true,
-                text: 'Macronutrients Breakdown',
+                text: 'A makrotápanyagok lebontása',
                 font: {
                     size: 20,
                 },
@@ -87,14 +87,18 @@ var myPieChart = new Chart(ctx, {
 
 // Calorie Goal Progress Bar
 
-var caloriePercentage = (calories / 2000) *  100;
+let caloriePercentage = (calories / 2000 * 100).toFixed(2);
+// let caloriePercentage = 30.2;
 //document.getElementById('progressBar').setAttribute('style', 'width:' + caloriePercentage + '%');
 
-$('.progress-bar').animate({
+$('#progressBar').animate({
     width: caloriePercentage + '%',
 
 }, 500);
+// document.getElementById('progressBar').innerText = Math.ceil(caloriePercentage)
+
 var interval = setInterval(function () {
+    document.getElementById('progressBar').innerText = Math.ceil(caloriePercentage)
 $('.progress-bar').html(caloriePercentage + '%');
 
 }, 500);

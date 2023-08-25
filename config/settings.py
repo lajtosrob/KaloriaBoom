@@ -64,6 +64,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'yourdatabasename.db'),
+    }
+}
+""" DATABASES = {
+    'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': config('DATABASE_NAME'),
         'USER': config('DATABASE_USER'),
@@ -71,7 +77,7 @@ DATABASES = {
         'HOST': config('DATABASE_HOST'),
         'PORT': '',  # leave blank so the default port is selected
     }
-}
+} """
 
 AUTH_USER_MODEL = 'foodtracker.User'
 

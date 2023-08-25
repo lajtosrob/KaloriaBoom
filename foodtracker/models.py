@@ -1,5 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from datetime import datetime
 
 
 class User(AbstractUser):
@@ -46,6 +47,7 @@ class Image(models.Model):
 class FoodLog(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     food_consumed = models.ForeignKey(Food, on_delete=models.CASCADE)
+    food_date = models.DateField(default=datetime.now, blank=False)
 
     class Meta:
         verbose_name = 'Food Log'
